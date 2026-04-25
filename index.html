@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sourdough Tracker</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --color-background-primary:   #ffffff;
+        --color-background-secondary: #f5f5f3;
+        --color-background-tertiary:  #efefed;
+        --color-background-info:      #e6f1fb;
+        --color-background-success:   #eaf3de;
+        --color-background-warning:   #faeeda;
+        --color-background-danger:    #fcebeb;
+        --color-text-primary:         #1a1a18;
+        --color-text-secondary:       #6b6b67;
+        --color-text-info:            #185fa5;
+        --color-text-success:         #3b6d11;
+        --color-text-warning:         #854f0b;
+        --color-text-danger:          #a32d2d;
+        --color-border-tertiary:      rgba(0,0,0,0.12);
+        --color-border-secondary:     rgba(0,0,0,0.22);
+        --color-border-info:          #378add;
+        --font-sans:                  system-ui, -apple-system, sans-serif;
+        --border-radius-md:           8px;
+        --border-radius-lg:           12px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-background-primary:   #1e1e1c;
+          --color-background-secondary: #2a2a28;
+          --color-background-tertiary:  #141412;
+          --color-background-info:      #042c53;
+          --color-background-success:   #173404;
+          --color-background-warning:   #412402;
+          --color-background-danger:    #501313;
+          --color-text-primary:         #f0f0ee;
+          --color-text-secondary:       #a0a09c;
+          --color-text-info:            #85b7eb;
+          --color-text-success:         #97c459;
+          --color-text-warning:         #ef9f27;
+          --color-text-danger:          #f09595;
+          --color-border-tertiary:      rgba(255,255,255,0.10);
+          --color-border-secondary:     rgba(255,255,255,0.20);
+          --color-border-info:          #185fa5;
+        }
+      }
+
+      body {
+        font-family:      var(--font-sans);
+        font-size:        16px;
+        line-height:      1.5;
+        color:            var(--color-text-primary);
+        background:       var(--color-background-tertiary);
+        min-height:       100vh;
+      }
+
+      button {
+        font-family:      var(--font-sans);
+        font-size:        14px;
+        font-weight:      400;
+        color:            var(--color-text-primary);
+        background:       var(--color-background-primary);
+        border:           0.5px solid var(--color-border-secondary);
+        border-radius:    var(--border-radius-md);
+        padding:          6px 14px;
+        cursor:           pointer;
+        transition:       background 0.15s;
+      }
+      button:hover    { background: var(--color-background-secondary); }
+      button:active   { transform: scale(0.98); }
+      button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+      input, select, textarea {
+        font-family:      var(--font-sans);
+        font-size:        14px;
+        color:            var(--color-text-primary);
+        background:       var(--color-background-primary);
+        border:           0.5px solid var(--color-border-secondary);
+        border-radius:    var(--border-radius-md);
+        padding:          8px 10px;
+        outline:          none;
+        transition:       border-color 0.15s;
+      }
+      input:focus, select:focus, textarea:focus {
+        border-color: var(--color-border-info);
+      }
+
+      #root { min-height: 100vh; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
